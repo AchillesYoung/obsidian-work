@@ -1,0 +1,81 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   URL入力エリア
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.x-post-saver-controls-row {
+  display: flex;
+  gap: var(--spacing-xs, 0.5rem);
+  align-items: center;
+  margin-top: var(--spacing-xs, 0.5rem);
+  padding: var(--spacing-xs, 0.5rem);
+}
+
+.x-post-saver-text {
+  flex: 1 1 auto;
+}
+
+.x-post-saver-controls-row .mod-cta,
+.x-post-saver-controls-row .mod-cta + .mod-cta {
+  margin-left: var(--spacing-xs, 0.5rem);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   タグ候補エリア
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.x-post-saver-tag-suggest {
+  margin: 8px 0 12px 0;
+}
+
+.x-post-saver-tag-suggest-label {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.x-post-saver-tag-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   タグトグルボタン
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.x-post-saver-tag-btn {
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.x-post-saver-tag-btn:hover {
+  border-color: var(--interactive-accent);
+}
+
+.x-post-saver-tag-btn-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Clear allボタン
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.x-post-saver-tag-clear {
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.x-post-saver-tag-clear:hover {
+  color: var(--text-normal);
+  border-color: var(--text-muted);
+}
