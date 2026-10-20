@@ -1,0 +1,176 @@
+/* ============================================
+   Typora GitHub 主题观感移植到 Obsidian
+   作用：让 Obsidian 阅读视图的排版接近 Typora 当前主题
+   启用：设置 → 外观 → CSS snippets → 打开本文件
+   ============================================ */
+
+/* ---------- 正文基础 ---------- */
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-content {
+  --typora-text: rgb(51, 51, 51);
+  --typora-border: #eee;
+  --typora-code-bg: #f3f4f4;
+  --typora-fence-bg: #f8f8f8;
+  --typora-fence-border: #e7eaed;
+  --typora-quote-border: #dfe2e5;
+  --typora-quote-text: #777777;
+  --typora-link: #4183c4;
+}
+
+/* ---------- 阅读视图 ---------- */
+.markdown-preview-view {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.markdown-preview-view h1,
+.markdown-preview-view h2 {
+  border-bottom: 1px solid var(--typora-border);
+  padding-bottom: 0.25em;
+}
+
+.markdown-preview-view h1 { font-size: 2em; line-height: 1.2; }
+.markdown-preview-view h2 { font-size: 1.6em; line-height: 1.25; }
+.markdown-preview-view h3 { font-size: 1.4em; line-height: 1.35; }
+.markdown-preview-view h4 { font-size: 1.2em; }
+.markdown-preview-view h5 { font-size: 1.05em; }
+.markdown-preview-view h6 { font-size: 1em; color: var(--typora-quote-text); }
+
+/* ---------- 编辑视图：同步标题层级 ---------- */
+.markdown-source-view.mod-cm6 .cm-content {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.markdown-source-view.mod-cm6 .cm-content .HyperMD-header-1 {
+  font-size: 2em;
+  border-bottom: 1px solid var(--typora-border);
+  padding-bottom: 0.25em;
+}
+.markdown-source-view.mod-cm6 .cm-content .HyperMD-header-2 {
+  font-size: 1.6em;
+  border-bottom: 1px solid var(--typora-border);
+  padding-bottom: 0.25em;
+}
+.markdown-source-view.mod-cm6 .cm-content .HyperMD-header-3 { font-size: 1.4em; }
+.markdown-source-view.mod-cm6 .cm-content .HyperMD-header-4 { font-size: 1.2em; }
+.markdown-source-view.mod-cm6 .cm-content .HyperMD-header-5 { font-size: 1.05em; }
+
+/* ---------- 行内代码 ---------- */
+.markdown-preview-view code,
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  background-color: var(--typora-code-bg);
+  color: var(--typora-text);
+  border: 1px solid var(--typora-fence-border);
+  border-radius: 3px;
+  padding: 2px 4px 0 4px;
+  font-size: 0.9em;
+}
+
+/* ---------- 代码块 ---------- */
+.markdown-preview-view pre {
+  background-color: var(--typora-fence-bg);
+  border: 1px solid var(--typora-fence-border);
+  border-radius: 3px;
+  padding: 10px 14px;
+}
+
+.markdown-preview-view pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: var(--typora-text);
+  font-size: 0.88em;
+}
+
+/* ---------- 引用块 ---------- */
+.markdown-preview-view blockquote {
+  border-left: 4px solid var(--typora-quote-border);
+  background-color: transparent;
+  padding: 0 15px;
+  color: var(--typora-quote-text);
+}
+
+.markdown-source-view.mod-cm6 .cm-content .HyperMD-quote {
+  border-left: 4px solid var(--typora-quote-border);
+  padding-left: 15px;
+  color: var(--typora-quote-text);
+}
+
+/* ---------- 表格 ---------- */
+.markdown-preview-view table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.markdown-preview-view table td,
+.markdown-preview-view table th {
+  border: 1px solid var(--typora-quote-border);
+  padding: 6px 13px;
+}
+
+.markdown-preview-view table thead,
+.markdown-preview-view table tr:nth-child(2n) {
+  background-color: var(--typora-fence-bg);
+}
+
+.markdown-preview-view table th {
+  font-weight: bold;
+}
+
+/* ---------- 链接 ---------- */
+.markdown-preview-view a,
+.markdown-source-view.mod-cm6 .cm-link,
+.markdown-source-view.mod-cm6 .cm-url {
+  color: var(--typora-link);
+  text-decoration: none;
+}
+
+.markdown-preview-view a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 分割线 ---------- */
+.markdown-preview-view hr {
+  height: 2px;
+  background-color: #e7e7e7;
+  border: none;
+}
+
+/* ---------- 段落宽度：Typora 会封顶，这里也对齐 ---------- */
+.markdown-preview-view .markdown-preview-sizer {
+  max-width: 860px;
+}
+
+/* ---------- 高亮 ---------- */
+.markdown-preview-view mark {
+  background-color: #fff3b8;
+  color: inherit;
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   中文表格对齐修正
+   原理：CodeMirror 默认字体里汉字占两个等宽位，
+        但| 和 - 是半角，所以竖线永远对不齐。
+        表格区域强制等宽字体即可对齐。
+   ============================================ */
+.cm-line:has(.HyperMD-table-row) .cm-inline-code,
+.markdown-source-view.mod-cm6 .HyperMD-table-row {
+  font-family: var(--font-monospace);
+  font-variant-ligatures: none;
+}
+
+/* ============================================
+   专注模式微调：减少写作时的视觉干扰
+   ============================================ */
+.markdown-source-view.mod-cm6.is-focused .cm-active.cm-line {
+  background-color: transparent;
+}
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3 {
+  font-weight: 600;
+}

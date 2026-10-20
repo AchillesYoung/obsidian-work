@@ -1,1 +1,5 @@
-{}
+{
+  "enabledCssSnippets": [
+    "typora-github-style"
+  ]
+}

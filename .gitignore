@@ -1,0 +1,16 @@
+# Obsidian 配置目录不该进版本库
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db
+
+# Typora 产生的临时文件
+*.Typora*
+.ttypora/
+typora_export/
+
+# Obsidian 核心插件配置（保留，但排除上面那些）
+!/.obsidian/snippets/
