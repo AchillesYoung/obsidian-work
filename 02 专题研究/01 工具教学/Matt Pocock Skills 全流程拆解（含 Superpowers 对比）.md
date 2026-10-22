@@ -72,7 +72,7 @@ Matt Pocock 这一年几乎把重心整个搬到 AI 上。在大量依赖 AI 开
 
 你看懂差别了吗？按照功能拆的好处是，当第一个任务做完，虽然网站只有登录能用，但你马上就可以打开浏览器测试。你不是蒙着眼把几千行代码写完才开始审核 AI 的产出，你会每做完一个小功能就能立刻确认它到底会不会动。
 
-![[tickets-by-feature-vs-layer.png]]
+![tickets-by-feature-vs-layer](http://tmyjqo2lv.hb-bkt.clouddn.com/wx/10/20/1414-a97.png?e=9000000000&token=6KzDwEy-FNdz0ng24Umd2wNTnNuYgUcAjBPObD7r:jI1ALboq33233YxL7ngy0jMj4bs=)
 
 *图 2：同样是电商网站，左边按技术分层切，右边按用户功能切。切法不同，能不能「随时验证」也不同。*
 
@@ -92,7 +92,7 @@ Matt Pocock 这一年几乎把重心整个搬到 AI 上。在大量依赖 AI 开
 
 所以 TDD 就是用来防作弊的。在写任何一行程序之前，AI 必须先把测试定死：「满 1000 就是只能扣 100。」因为这时候程序根本还没写，测试一跑下去绝对会失败、亮起红灯。等到红灯出现了，才准 AI 开始写真正算钱的程序，直到红灯变成过关的绿灯为止。用这种「先写测试，再写程序」的顺序，才能彻底锁死 AI 乱写交差的空间。
 
-![[tdd-red-green-vs-cheating.png]]
+![tdd-red-green-vs-cheating](http://tmyjqo2lv.hb-bkt.clouddn.com/wx/10/20/1413-6a8.png?e=9000000000&token=6KzDwEy-FNdz0ng24Umd2wNTnNuYgUcAjBPObD7r:nvGe8w5IialqMC0aX0YKDa9wLdI=)
 
 *图 3：上排是正确顺序（先红后绿），下排是 AI 最爱的作弊路线——自己出题自己答，测试永远是绿的。*
 
@@ -150,7 +150,7 @@ Matt 认为，真正能让 AI 发挥全力的好架构，应该是「深模块�
 
 简单来说：浅模块会让 AI 迷路并瞎猜，深模块能让 AI 专注并精准打击。
 
-![[shallow-vs-deep-module.png]]
+![shallow-vs-deep-module](http://tmyjqo2lv.hb-bkt.clouddn.com/wx/10/20/1414-3b7.png?e=9000000000&token=6KzDwEy-FNdz0ng24Umd2wNTnNuYgUcAjBPObD7r:oxoD312Q1zq6E9FWw_RRTY_dCLU=)
 
 *图 4：左边主程序要亲自对接五个房间，右边只敲一扇 processCheckout 的门。*
 
